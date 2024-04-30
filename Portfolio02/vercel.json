@@ -4,7 +4,7 @@
       {
         "src": "Portfolio02/wsgi.py",
         "use": "@vercel/python",
-        "config": {"maxLambdaSize": "15mb", "runtime": "python3.x"}
+        "config": {"maxLambdaSize": "15mb", "runtime": "3.12"}
       },
       {
         "src": "build_files.sh",
