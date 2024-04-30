@@ -1,0 +1,311 @@
+body {
+    background: hsla(197, 14%, 57%, 1);
+    background: linear-gradient(90deg, hsla(197, 14%, 57%, 1) 0%, hsla(192, 17%, 94%, 1) 100%);
+    background: -moz-linear-gradient(90deg, hsla(197, 14%, 57%, 1) 0%, hsla(192, 17%, 94%, 1) 100%);
+    background: -webkit-linear-gradient(90deg, hsla(197, 14%, 57%, 1) 0%, hsla(192, 17%, 94%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#8399A2", endColorstr="#EEF2F3", GradientType=1);
+}
+
+#content-end {
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.31);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 255, 255, 0.44);
+    
+}
+
+h1,
+h2,
+h5 {
+    color: #000000;
+}
+
+.helloworld{
+    color: rgba(0, 0, 0, 0);
+    background: linear-gradient(270deg,#043c2c, #1c252d, #7c4cfc, #7d5ace, #34c1f1, #55afed, #148ee3, #6291e4, #2494ec, #04acc4, #f4541c, #c4a954, #eb5b04, #ac8179, #fc6c04, #fcc404, #fcd404, #fac104, #3592cc, #0474bc, #3bc3d3
+    );
+    animation: flame 12s ease-in-out infinite;
+    background-size: 600% 600%;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.card-title {
+    color: #000000;
+}
+
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+
+    }
+}
+
+.hello-world {
+    color: #000000d5;
+}
+
+.resume {
+    text-decoration: none;
+    color: #000000;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.resume:hover {
+    color: #615e5e;
+}
+
+p {
+    /* color: #A1ADC9; */
+    color: #000000;
+
+}
+
+.header-name {
+    padding-top: 7rem;
+}
+
+#about {
+    padding-top: 8rem;
+}
+
+#experience {
+    padding-top: 7rem;
+}
+
+.main-container {
+    padding-left: 7rem;
+    padding-right: 7rem;
+    width: 1250px;
+}
+
+.active {
+    color: #000000;
+
+}
+
+#navbar {
+    color: #7e8697c9;
+}
+
+
+#email-link {
+    color: #000000;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+#email-link:hover {
+    color: #ffffff;
+}
+
+.card {
+    background: rgba(57, 82, 115, 0.05);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(122, 127, 133, 0.37);
+    transition: filter 1s ease, opacity 1s ease;
+
+}
+
+@media only screen and (max-width: 992px) {
+    .header-name {
+        padding-top: 0;
+    }
+
+    .main {
+        padding-top: 0;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .main-container {
+        padding-left: 0;
+        padding-right: 0;
+        width: inherit;
+
+    }
+
+    #about {
+        padding-top: 0;
+    }
+
+    #experience {
+        padding-top: 0;
+    }
+
+    /* added janico picture hidden*/
+
+}
+
+#projects:hover .card {
+    filter: blur(20px);
+    opacity: 0.5;
+    transition: filter 1s ease, opacity 1s ease;
+}
+
+
+#projects .card:hover {
+    filter: blur(0px);
+    background: rgba(255, 255, 255, 0.15);
+    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
+    border: 1px solid rgba(255, 255, 255, 0.075);
+    transition: color 1s ease, background-color 1s ease;
+    opacity: 1;
+}
+
+#experience:hover .card {
+    filter: blur(20px);
+    opacity: 0.5;
+    transition: color 1s ease, background-color 1s ease;
+}
+
+#experience .card:hover {
+    filter: blur(0px);
+    background: rgba(255, 255, 255, 0.15);
+    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
+    border: 1px solid rgba(255, 255, 255, 0.075);
+    transition: background-color 1s ease;
+    opacity: 1;
+}
+
+.btn {
+    color: #000000;
+    transition: color 1s ease;
+}
+
+.btn:hover {
+    color: #707783fb;
+    transition: color 1s ease;
+}
+
+/* Base styles for the image */
+img.my-picture {
+    position: relative;
+    filter: grayscale(100%);
+    overflow: hidden;
+    /* Ensure the gradient border doesn't overflow */
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    border: 10px solid #000000dc;
+}
+
+/* Gradient border animation */
+img.my-picture:hover {
+    transition: filter 1s ease-in-out;
+    border: 10px solid transparent;
+    filter: grayscale(0%);
+    background: linear-gradient(270deg, #d5ccae, #938776, #9bc5e2, #8fa5ba, #1b271c, #66846f, #625d47, #4c6c71, #3b5b3c, #a7bf2a, #36434a, #264226, #d5ccae);
+    background-size: 600% 600%;
+    -webkit-animation: border-animation 12s ease infinite;
+    -moz-animation: border-animation 12s ease infinite;
+    -o-animation: border-animation 12s ease infinite;
+    animation: border-animation 12s ease infinite;
+}
+
+@-webkit-keyframes border-animation {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@-moz-keyframes border-animation {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@-o-keyframes border-animation {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@keyframes border-animation {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+/*for stack icons */
+.stock-icons img {
+    filter: grayscale(0%);
+    transition: filter 0.3s ease-in-out;
+}
+
+.stock-icons img:hover {
+    filter: grayscale(100%);
+}
+
+#stack {
+    color: rgba(0, 0, 0, 0);
+    background: linear-gradient(270deg,#043c2c, #1c252d, #7c4cfc, #7d5ace, #34c1f1, #55afed, #148ee3, #6291e4, #2494ec, #04acc4, #f4541c, #c4a954, #eb5b04, #ac8179, #fc6c04, #fcc404, #fcd404, #fac104, #3592cc, #0474bc, #3bc3d3
+    );
+    animation: flame 12s ease-in-out infinite;
+    background-size: 600% 600%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    
+}
+
+@keyframes flame {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}

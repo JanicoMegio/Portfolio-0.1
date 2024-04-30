@@ -1,0 +1,323 @@
+{% extends "App/base.html" %}
+{% load static %}
+{% block content %}
+<div class="container-fluid main-container mt-5 mb-4" id="content-end">
+  <div class="row m-0">
+    <div class="col-12 col-lg-5" id="nav-side">
+      <div class="container mx-md-5 mx-sm-5 sticky-lg-top header-name">
+        {% for myname in janico %}
+        <img
+          src="{{ myname.profile.url }}"
+          class="mb-4 my-picture img-fluid mt-5 mt-lg-0 mt-xl-0"
+          alt="Janico Picture"
+        />
+        <h2>Hi, I'm</h2>
+        <h1 class="text-start fw-bold display-5">{{myname.name}}</h1>
+        {% endfor %}
+        <h2 class="text-start mb-3">
+          a Web <span class="helloworld">Developer</span>
+        </h2>
+        <div class="container mb-5 social-link">
+          <a
+            href="https://github.com/JanicoMegio"
+            target="_blank"
+            class="btn d-inline"
+            ><i class="fab fa-github fa-lg"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/hanikooosan/"
+            class="btn d-inline"
+            target="_blank"
+            ><i class="fab fa-instagram fa-lg"></i
+          ></a>
+          <a
+            href="https://www.facebook.com/HanikoMegio/"
+            target="_blank"
+            class="btn d-inline"
+            ><i class="fab fa-facebook fa-lg"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/janico-megio-95751b267/
+                "
+            class="btn d-inline"
+            target="_blank"
+            ><i class="fab fa-linkedin fa-lg"></i
+          ></a>
+        </div>
+
+        <nav class="my-4" id="navbar">
+          <a
+            href="#about"
+            class="h6 d-block my-3"
+            style="
+              text-decoration: none;
+              transition: color 0.3s ease, background-color 0.3s ease;
+            "
+            >ABOUT</a
+          >
+          <a
+            href="#experience"
+            class="h6 d-block my-3"
+            style="
+              text-decoration: none;
+              transition: color 0.3s ease, background-color 0.3s ease;
+            "
+            >EXPERIENCE</a
+          >
+          <a
+            href="#projects"
+            class="h6 d-block my-3"
+            style="
+              text-decoration: none;
+              transition: color 0.3s ease, background-color 0.3s ease;
+            "
+            >PROJECTS</a
+          >
+        </nav>
+      </div>
+    </div>
+    <div class="col-12 col-lg-7">
+      <section class="mb-5" id="about">
+        <div class="container">
+        {% for myabout in janico %}
+          <p class="fw-normal mb-2 pb-3 fs-6">
+            {{ myabout.about|linebreaksbr  }}
+          </p>
+          {% endfor %}
+        </div>
+      </section>
+      
+      <section class="mb-5" id="experience">
+        {% for exp in experience %}
+        <div class="container">
+          <div class="card mb-4">
+            <div class="card-body">
+              <h5 class="fw-normal">
+                <span class="fw-bold">{{ exp.title}} {% if exp.position%} &#8226; {{ exp.position}} {%endif%} </span>
+              </h5>
+              <p class="fw-bold"><small>{{exp.date|upper}}</small></p>
+              <p>
+                {{exp.duties}}
+              </p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        {% for me in janico %}
+        <a
+          href="{{ me.resume.url }}"
+          target="_blank"
+          class="resume d-block pt-4"
+          >View My Resume <i class="fas fa-up-right-from-square fa-md"></i
+        ></a>
+        {% endfor %}
+      </section>
+
+      <div class="container mb-5 pb-5">
+        <h1 class="text-center py-5 fw-bold display-3" id="stack">Stack</h1>
+
+        <div class="row gy-4 justify-content-center">
+          <div class="col-4 col-md-3 col-lg-3">
+            <div class="stock-icons text-center">
+              <img
+                src="{% static 'stack/python.svg'%}"
+                class="img-fluid"
+                alt="python"
+                height="65"
+                width="65"
+              />
+            </div>
+          </div>
+          <div class="col-4 col-md-3 col-lg-3">
+            <div class="stock-icons text-center">
+              <img
+                src="{% static 'stack/django.svg'%}"
+                class="img-fluid"
+                alt="django"
+                height="55"
+                width="65"
+              />
+            </div>
+          </div>
+          <div class="col-4 col-md-3 col-lg-3">
+            <div class="stock-icons text-center">
+              <img
+                src="{% static 'stack/react-js.svg'%}"
+                class="img-fluid"
+                alt="react-js"
+                height="65"
+                width="65"
+              />
+            </div>
+          </div>
+          <div class="col-4 col-md-3 col-lg-3">
+            <div class="stock-icons text-center">
+              <img
+                src="{% static 'stack/javascript.svg'%}"
+                class="img-fluid"
+                alt="JavaScript"
+                height="65"
+                width="65"
+              />
+            </div>
+          </div>
+          <div class="col-4 col-md-3 col-lg-3">
+            <div class="stock-icons text-center">
+              <img
+                src="{% static 'stack/vite.svg'%}"
+                class="img-fluid"
+                alt="vite"
+                height="65"
+                width="65"
+              />
+            </div>
+          </div>
+          <div class="col-4 col-md-3 col-lg-3">
+            <div class="stock-icons text-center">
+              <img
+                src="{% static 'stack/bootstrap.svg'%}"
+                class="img-fluid"
+                alt="bootstrap"
+                height="65"
+                width="65"
+              />
+            </div>
+          </div>
+          <div class="col-4 col-md-3 col-lg-3">
+            <div class="stock-icons text-center">
+              <img
+                src="{% static 'stack/tailwind-css.svg'%}"
+                class="img-fluid"
+                alt="tailwind"
+                height="65"
+                width="65"
+              />
+            </div>
+          </div>
+          <div class="col-4 col-md-3 col-lg-3">
+            <div class="stock-icons text-center">
+              <img
+                src="{% static 'stack/html-5.svg'%}"
+                class="img-fluid"
+                alt="html-5"
+                height="65"
+                width="65"
+              />
+            </div>
+          </div>
+          <div class="col-4 col-md-3 col-lg-3">
+            <div class="stock-icons text-center">
+              <img
+                src="{% static 'stack/css.svg'%}"
+                class="img-fluid"
+                alt="python"
+                height="65"
+                width="65"
+              />
+            </div>
+          </div>
+          <div class="col-4 col-md-3 col-lg-3">
+            <div class="stock-icons text-center">
+              <img
+                src="{% static 'stack/postgresql.svg'%}"
+                class="img-fluid"
+                alt="PostgreSQL"
+                height="65"
+                width="65"
+              />
+            </div>
+          </div>
+          <div class="col-4 col-md-3 col-lg-3">
+            <div class="stock-icons text-center">
+              <img
+                src="{% static 'stack/docker.svg'%}"
+                class="img-fluid"
+                alt="docker"
+                height="65"
+                width="65"
+              />
+            </div>
+          </div>
+          <div class="col-4 col-md-3 col-lg-3">
+            <div class="stock-icons text-center">
+              <img
+                src="{% static 'stack/git.svg'%}"
+                class="img-fluid"
+                alt="git"
+                height="65"
+                width="65"
+              />
+            </div>
+          </div>
+        </div>
+        <hr class="text-muted mt-5" />
+      </div>
+      <section class="mb-5" id="projects">
+        {% for project in projects %}
+        <div class="container">
+          <div class="card mb-3">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img
+                  src="{{ project.image.url }}"
+                  alt="{{project.title}}"
+                  class="img-fluid p-2 w-100 rounded-4"
+                  style="object-fit: scale-down; max-height: 250px"
+                />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body pb-5">
+                  <p class="float-end">
+                    <i class="fas fa-up-right-from-square"></i>
+                  </p>
+                  <h4 class="card-title">{{project.title}}</h4>
+                  <p class="card-text">
+                    {{ project.info }}
+                  </p>
+                  <div class="row text-muted">
+                    {% for stack in stackdata%}
+                    <div class="col-4">
+                      <p>{{stack}}</p>
+                    </div>
+                    {% endfor %}
+                  </div>
+                
+                  <a
+                    href="{{ project.url }}"
+                    class="card-link"
+                    target="_blank"
+                    style="
+                      position: absolute;
+                      top: 0;
+                      bottom: 0;
+                      left: 0;
+                      width: 100%;
+                    "
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </section>
+      <footer class="text-center">
+        <p>
+          Get In Touch?
+          <span>
+            My inbox is always open for new opportunities. Please feel free to
+            reach out to me.</span
+          >
+          <a href="mailto:janicomegio02@gmail.com" id="email-link"
+            >janicomegio02@gmail.com
+            <i class="fas fa-up-right-from-square fa-sm"></i
+          ></a>
+        </p>
+        <p class="text-center">
+          <small>Design & build by Janico Megio</small>
+        </p>
+      </footer>
+    </div>
+  </div>
+</div>
+{% endblock %}
